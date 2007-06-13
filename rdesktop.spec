@@ -1,6 +1,6 @@
 %define	name	rdesktop
 %define	version	1.5.0
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Summary:	RDP client
 Name:		%{name}
@@ -10,6 +10,7 @@ License:	GPL
 Group:		Terminals
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.bz2
+Patch0: 	rdesktop-fix-depth-crash-1.5.0.patch.bz2
 BuildRequires:	openssl-devel XFree86-devel gmp-devel libao-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
@@ -26,8 +27,10 @@ straightforward.
 rdesktop is used through rfbdrake.
 
 %prep
-
 %setup -q
+
+#Fix crash on 16bpp
+%patch0  -p1 
 
 # lib64 fix
 perl -pi -e "s|\/lib\"|\/%{_lib}\"|g" configure*
