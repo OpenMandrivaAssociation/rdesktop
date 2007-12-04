@@ -7,7 +7,7 @@ Group:		Terminals
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.bz2
 Patch0: 	rdesktop-fix-depth-crash-1.5.0.patch
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 BuildRequires:	gmp-devel
 BuildRequires:	libao-devel
 BuildRequires:	openssl-devel
