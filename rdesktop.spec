@@ -11,6 +11,7 @@ BuildRequires:	X11-devel
 BuildRequires:	gmp-devel
 BuildRequires:	libao-devel
 BuildRequires:	openssl-devel
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 rdesktop is an open source client for Windows NT Terminal Server and Windows
