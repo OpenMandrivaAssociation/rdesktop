@@ -3,7 +3,7 @@ Name:		rdesktop
 Version:	1.5.0
 Release:	%mkrel 3
 License:	GPL
-Group:		Terminals
+Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.bz2
 Patch0: 	rdesktop-fix-depth-crash-1.5.0.patch
