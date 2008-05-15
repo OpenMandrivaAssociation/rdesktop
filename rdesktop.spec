@@ -1,13 +1,14 @@
 Summary:	RDP client
 Name:		rdesktop
 Version:	1.6.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
 BuildRequires:	alsa-lib-devel
 BuildRequires:	gmp-devel
+BuildRequires:	libao-devel
 BuildRequires:	libsamplerate-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pcsc-lite-devel >= 1.2.9
@@ -39,7 +40,7 @@ export STRIP="/bin/true"
 %configure2_5x \
     --with-openssl=%{_prefix} \
     --with-libao=%{_prefix} \
-    --with-sound=alsa \
+    --with-sound=libao \
     --with-ipv6 \
     --enable-smartcard
 
