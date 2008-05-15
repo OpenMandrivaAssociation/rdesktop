@@ -1,17 +1,19 @@
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.5.0
-Release:	%mkrel 4
+Version:	1.6.0
+Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
-Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.bz2
-Patch0: 	rdesktop-fix-depth-crash-1.5.0.patch
-BuildRequires:	X11-devel
+Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
+BuildRequires:	alsa-lib-devel
 BuildRequires:	gmp-devel
-BuildRequires:	libao-devel
+BuildRequires:	libsamplerate-devel
 BuildRequires:	openssl-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRequires:	pcsc-lite-devel >= 1.2.9
+BuildRequires:	pkgconfig
+BuildRequires:	X11-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 rdesktop is an open source client for Windows NT Terminal Server and Windows
@@ -27,20 +29,19 @@ rfbdrake.
 
 %setup -q
 
-#Fix crash on 16bpp
-%patch0  -p1 
-
 # lib64 fix
 perl -pi -e "s|\/lib\"|\/%{_lib}\"|g" configure*
 perl -pi -e "s|\/lib\ |\/%{_lib}\ |g" configure*
 
 %build
+export STRIP="/bin/true"
 
 %configure2_5x \
     --with-openssl=%{_prefix} \
     --with-libao=%{_prefix} \
-    --with-sound=libao \
-    --with-ipv6
+    --with-sound=alsa \
+    --with-ipv6 \
+    --enable-smartcard
 
 %make
 
