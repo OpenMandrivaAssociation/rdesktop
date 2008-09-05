@@ -1,7 +1,7 @@
 Summary:	RDP client
 Name:		rdesktop
 Version:	1.6.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
@@ -14,6 +14,12 @@ BuildRequires:	openssl-devel
 BuildRequires:	pcsc-lite-devel >= 1.2.9
 BuildRequires:	pkgconfig
 BuildRequires:	X11-devel
+# nx used to have a forked version of rdesktop called nxdesktop, this
+# was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
+# it seems to make most sense handling this by making the original
+# rdesktop obsolete and provide the now obsolete fork - AdamW 2008/09
+Obsoletes:	nxdesktop < 3.2.0
+Provides:	nxdesktop
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
