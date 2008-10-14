@@ -1,11 +1,12 @@
 Summary:	RDP client
 Name:		rdesktop
 Version:	1.6.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
+Source1:	%{name}.bash-completion
 BuildRequires:	alsa-lib-devel
 BuildRequires:	gmp-devel
 BuildRequires:	libao-devel
@@ -57,8 +58,11 @@ chmod 644 doc/*
 
 %install
 rm -rf %{buildroot}
-
 %makeinstall_std
+
+# bash completion
+install -d -m 755 %{buildroot}%{_sysconfdir}/bash_completion.d
+install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/bash_completion.d/%{name}
 
 %clean
 rm -rf %{buildroot}
@@ -66,7 +70,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING doc/*.txt doc/AUTHORS doc/HACKING doc/TODO
+%{_sysconfdir}/bash_completion.d/%{name}
 %{_bindir}/rdesktop
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/keymaps
+%{_datadir}/%{name}
 %{_mandir}/man1/*
