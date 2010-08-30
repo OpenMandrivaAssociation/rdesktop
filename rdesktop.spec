@@ -1,11 +1,12 @@
 Summary:	RDP client
 Name:		rdesktop
 Version:	1.6.0
-Release:	%mkrel 11
+Release:	%mkrel 12
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
+Patch0:		rdesktop-1.6.0-pcsclite-1.6.patch
 BuildRequires:	alsa-lib-devel
 BuildRequires:	gmp-devel
 BuildRequires:	libao-devel
@@ -33,8 +34,8 @@ and other ports should be fairly straightforward. rdesktop is used through
 rfbdrake.
 
 %prep
-
 %setup -q
+%patch0 -p0
 
 # lib64 fix
 perl -pi -e "s|\/lib\"|\/%{_lib}\"|g" configure*
