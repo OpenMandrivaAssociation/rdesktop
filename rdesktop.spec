@@ -7,14 +7,11 @@ Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
 Patch0:		rdesktop-1.6.0-pcsclite-1.6.patch
-BuildRequires:	alsa-lib-devel
-BuildRequires:	gmp-devel
+BuildRequires:	libx11-devel
 BuildRequires:	libao-devel
-BuildRequires:	libsamplerate-devel
 BuildRequires:	openssl-devel
-BuildRequires:	pcsc-lite-devel >= 1.2.9
-BuildRequires:	pkgconfig
-BuildRequires:	X11-devel
+BuildRequires:	pcsc-lite-devel
+BuildRequires:	libsamplerate-devel
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
