@@ -1,7 +1,7 @@
 Summary:	RDP client
 Name:		rdesktop
 Version:	1.6.0
-Release:	%mkrel 12
+Release:	%mkrel 13
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
