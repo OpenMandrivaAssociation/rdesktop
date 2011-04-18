@@ -1,7 +1,7 @@
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.6.0
-Release:	%mkrel 13
+Version:	1.7.0
+Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
@@ -12,6 +12,7 @@ BuildRequires:	libao-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	libsamplerate-devel
+BuildRequires:	libxrandr-devel
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
