@@ -1,13 +1,16 @@
+%define	Werror_cflags	%nil
+
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.7.0
-Release:	%mkrel 2
+Version:	1.7.1
+Release:	1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
-Patch0:		rdesktop-1.6.0-pcsclite-1.6.patch
+
 Patch1:		rdesktop-libao.patch
+
 BuildRequires:	libx11-devel
 BuildRequires:	libao-devel
 BuildRequires:	openssl-devel
@@ -20,7 +23,6 @@ BuildRequires:	libxrandr-devel
 # rdesktop obsolete and provide the now obsolete fork - AdamW 2008/09
 Obsoletes:	nxdesktop < 3.2.0
 Provides:	nxdesktop
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 rdesktop is an open source client for Windows NT Terminal Server and Windows
@@ -35,7 +37,6 @@ rfbdrake.
 %prep
 
 %setup -q
-%patch0 -p0
 %patch1 -p1 -b .ao
 
 # lib64 fix
@@ -58,15 +59,10 @@ chmod 644 COPYING
 chmod 644 doc/*
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc COPYING doc/*.txt doc/AUTHORS doc/HACKING doc/TODO
 %{_bindir}/rdesktop
 %{_datadir}/%{name}
