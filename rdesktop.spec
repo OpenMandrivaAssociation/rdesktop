@@ -1,15 +1,12 @@
-%define	Werror_cflags	%nil
-
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.7.1
-Release:	2
+Version:	1.8.0
+Release:	1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
-
-Patch1:		rdesktop-libao.patch
+Patch0:		rdesktop-libao.patch
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ao)
@@ -37,7 +34,7 @@ rfbdrake.
 %prep
 
 %setup -q
-%patch1 -p1 -b .ao
+%patch0 -p1 -b .ao
 
 # lib64 fix
 perl -pi -e "s|\/lib\"|\/%{_lib}\"|g" configure*
