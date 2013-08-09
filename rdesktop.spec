@@ -14,6 +14,7 @@ BuildRequires:	openssl-devel
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	pkgconfig(libgssglue)
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
