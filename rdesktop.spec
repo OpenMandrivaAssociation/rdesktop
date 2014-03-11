@@ -1,15 +1,12 @@
-%define	Werror_cflags	%nil
-
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.7.1
-Release:	3
+Version:	1.8.1
+Release:	1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
-
-Patch1:		rdesktop-libao.patch
+Patch0:		rdesktop-libao.patch
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ao)
@@ -17,6 +14,7 @@ BuildRequires:	openssl-devel
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	pkgconfig(libgssglue)
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
@@ -37,7 +35,7 @@ rfbdrake.
 %prep
 
 %setup -q
-%patch1 -p1 -b .ao
+%patch0 -p1 -b .ao
 
 # lib64 fix
 perl -pi -e "s|\/lib\"|\/%{_lib}\"|g" configure*

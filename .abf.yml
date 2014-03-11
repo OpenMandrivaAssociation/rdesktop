@@ -1,2 +1,4 @@
+removed_sources:
+  rdesktop-1.7.1.tar.gz: c718d0f49948a964c7ef8424b8ade73ecce3aba3
 sources:
-  "rdesktop-1.7.1.tar.gz": c718d0f49948a964c7ef8424b8ade73ecce3aba3
+  rdesktop-1.8.1.tar.gz: 57bb41f98ddf9eeef875c613d790fee37971d0f8
