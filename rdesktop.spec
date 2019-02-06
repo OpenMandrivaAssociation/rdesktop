@@ -1,11 +1,11 @@
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.8.3
-Release:	2
+Version:	1.8.4
+Release:	1
 License:	GPL
 Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
-Source0:	http://prdownloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
+Source0:	https://github.com/rdesktop/rdesktop/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		rdesktop-libao.patch
 
 BuildRequires:	pkgconfig(x11)
