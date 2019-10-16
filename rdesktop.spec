@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(libtasn1)
 BuildRequires:  pkgconfig(nettle)
 BuildRequires:  pkgconfig(gnutls)
 BuildRequires:  pkgconfig(krb5-gssapi)
+BuildRequires:  pkgconfig(xcursor)
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
