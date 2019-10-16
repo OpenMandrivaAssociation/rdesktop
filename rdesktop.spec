@@ -1,6 +1,6 @@
 Summary:	RDP client
 Name:		rdesktop
-Version:	1.8.6
+Version:	1.9.0
 Release:	1
 License:	GPL
 Group:		Networking/Remote access
@@ -15,6 +15,12 @@ BuildRequires:	pcsc-lite-devel
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(libgssglue)
+BuildRequires:  pkgconfig(libtasn1)
+BuildRequires:  pkgconfig(nettle)
+BuildRequires:  pkgconfig(gnutls)
+BuildRequires:  pkgconfig(krb5-gssapi)
+BuildRequires:  pkgconfig(xcursor)
+BuildRequires:  gmp-devel
 # nx used to have a forked version of rdesktop called nxdesktop, this
 # was dropped in nx 3.2.0 and nx now works with unmodified rdekstop.
 # it seems to make most sense handling this by making the original
@@ -51,13 +57,13 @@ export STRIP="/bin/true"
     --with-ipv6 \
     --enable-smartcard
 
-%make
+%make_build
 
 chmod 644 COPYING
 chmod 644 doc/*
 
 %install
-%makeinstall_std
+%make_install
 
 
 %files
