@@ -10,7 +10,7 @@ Patch0:		rdesktop-libao.patch
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ao)
-BuildRequires:	openssl-devel
+BuildRequires:	pkgconfig(libssl)
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(xrandr)
