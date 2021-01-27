@@ -7,6 +7,7 @@ Group:		Networking/Remote access
 URL:		http://www.rdesktop.org/
 Source0:	https://github.com/rdesktop/rdesktop/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		rdesktop-libao.patch
+Patch1:		rdesktop-1.9.0-rdssl_rkey_get_exp_mod.patch
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ao)
@@ -39,7 +40,6 @@ and other ports should be fairly straightforward. rdesktop is used through
 rfbdrake.
 
 %prep
-
 %autosetup -p1
 
 # lib64 fix
