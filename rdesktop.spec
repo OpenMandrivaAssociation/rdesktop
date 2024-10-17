@@ -4,7 +4,7 @@ Version:	1.9.0
 Release:	2
 License:	GPL
 Group:		Networking/Remote access
-URL:		http://www.rdesktop.org/
+URL:		https://www.rdesktop.org/
 Source0:	https://github.com/rdesktop/rdesktop/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		rdesktop-libao.patch
 Patch1:		rdesktop-1.9.0-rdssl_rkey_get_exp_mod.patch
