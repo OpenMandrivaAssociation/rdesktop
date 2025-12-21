@@ -9,6 +9,11 @@ Source0:	https://github.com/rdesktop/rdesktop/releases/download/v%{version}/%{na
 Patch0:		rdesktop-libao.patch
 Patch1:		rdesktop-1.9.0-rdssl_rkey_get_exp_mod.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ao)
 BuildRequires:	pkgconfig(libssl)
