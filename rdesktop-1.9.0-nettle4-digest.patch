@@ -1,0 +1,29 @@
+Nettle 4: *_digest no longer takes the digest length.
+
+--- a/ssl.c	2026-08-17 07:14:34.407106244 +0200
++++ b/ssl.c	2026-08-17 07:14:34.422681783 +0200
+@@ -41,7 +41,7 @@
+ void
+ rdssl_sha1_final(RDSSL_SHA1 * sha1, uint8 * out_data)
+ {
+-	sha1_digest(sha1, SHA1_DIGEST_SIZE, out_data);
++	sha1_digest(sha1, out_data);
+ }
+ 
+ void
+@@ -59,7 +59,7 @@
+ void
+ rdssl_md5_final(RDSSL_MD5 * md5, uint8 * out_data)
+ {
+-	md5_digest(md5, MD5_DIGEST_SIZE, out_data);
++	md5_digest(md5, out_data);
+ }
+ 
+ void
+@@ -360,5 +360,5 @@
+ 
+ 	hmac_md5_set_key(&ctx, key_len, key);
+ 	hmac_md5_update(&ctx, msg_len, msg);
+-	hmac_md5_digest(&ctx, MD5_DIGEST_SIZE, md);
++	hmac_md5_digest(&ctx, md);
+ }
